@@ -1,0 +1,11 @@
+
+public class Card {
+	
+	public Card(String string, int i) {
+		// TODO Auto-generated constructor stub
+	//	Card c  = 
+	}
+
+	
+
+}
