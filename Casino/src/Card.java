@@ -1,11 +1,29 @@
-
 public class Card {
-	
-	public Card(String string, int i) {
-		// TODO Auto-generated constructor stub
-	//	Card c  = 
+
+	private String suit;
+	private String rank;
+	private int value;
+
+
+	public Card(String suit, String rank, int value) {
+		this.rank = rank;
+		this.suit = suit;
+		this.value = value;
 	}
 
-	
+	public int getValue() {
+		return value;
+	}
 
+	public String getSuit() {
+		return suit;
+	}
+
+	public String getRank() {
+		return rank;
+	}
+	
+	public String toString() {
+		return rank + " of " + suit;
+	}
 }

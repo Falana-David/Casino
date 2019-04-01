@@ -1,45 +1,26 @@
-import java.util.Random;
 import java.util.ArrayList;
+import java.util.Collections;
 
-//public static int money;
-//public in
-//public ArrayList<String> deck_of_cards;
-//private int decklength;
+public class Deck extends ArrayList<Card>{
 
-public class Deck {
+	public Deck(String[] suits, String[] ranks, int[] values) {
 
-	private Deck[] Deck;
+		for (int i = 0; i < ranks.length; i++) {
 
-	public Deck() {
-		/*
-		 * ArrayList <String> deck_of_cards = new ArrayList <> ();
-		 * deck_of_cards.add("Spades"); deck_of_cards.add("Hearts");
-		 * deck_of_cards.add("Dimonds"); deck_of_cards.add("Clubs");
-		 */
+			for (String suitString : suits) {
 
-		this.Deck = new Deck[52];
-		String[] suit = { "Spades", "Hearts", "Dimonds", "Clubs" };
-		int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-
-		/*
-		 * for (int i = 1; i < 11; i++) { String value = Integer.toString(i);
-		 * deck_of_cards.add(value);
-		 * 
-		 * deck_of_cards.add(value); deck_of_cards.add(value); deck_of_cards.add(value);
-		 * 
-		 * }
-		 */
-
-		for (int i = 0; i < suit.length; i++) {
-			for (int n = 0; n < numbers.length; n++) {
-				Card c = new Card(suit[i], numbers[n]);
-
+				this.add(new Card(ranks[i], suitString, values[i]));
 			}
 		}
+		Collections.shuffle(this);
 	}
 
-	/*
-	 * public void Card(String string, int i) { // TODO Auto-generated constructor
-	 * stub rnd = Card c }
-	 */
+	public Card deal() {
+		
+		if(this.size() > 0) {
+			return this.remove(0);
+		}
+		
+		return null;
+	}
 }
